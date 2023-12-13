@@ -5,3 +5,7 @@
 # NUKE
 @v c "HEY"
 @print c
+@for index range(5)
+  @print index + 1
+  @break
+@end
