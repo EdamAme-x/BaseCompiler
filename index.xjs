@@ -17,12 +17,12 @@
     @print "countup!"
     count++
     @if count > 3
-        @print("limit!!")
+        @print "limit!!"
         @v hide false
     @elif count < 3
-        @print("ok!!")
+        @print "ok!!"
     @else
-        # Why!?
+        // Why!?
     @end
 @end
 

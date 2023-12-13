@@ -111,6 +111,7 @@ class BaseCompiler {
             code += `\n ${line}`;
         }
 
+        code += `\n function range(n){let r=[],e=0;for(;r.push(e),!(++e>=n););return r}`
         return code;
     }
 
@@ -118,8 +119,6 @@ class BaseCompiler {
     execute(js) {
         return new Function(`
 // % BaseCompiler %
-function range(n){let r=[],e=0;for(;r.push(e),!(++e>=n););return r}
-// $ BaseCompiler %
 ${js}
 `)();
     }
