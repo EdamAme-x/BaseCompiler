@@ -1,0 +1,33 @@
+@v a "Hello"
+@v b "World"
+@v c a + b
+@print c
+# NUKE
+@v c "HEY"
+@print c
+@for index range(5)
+  @print index + 1
+  @if (index + 1) % 2 === 0
+    @print "odd"
+  @end
+@end
+@v hide true
+@v count 0
+@while hide
+    @print "countup! : " + count
+    count++
+    @if count > 3
+        @print "limit!!"
+        @v hide false
+    @elif count < 3
+        @print "ok!!"
+    @else
+        @print "yabai!!"
+    @end
+@end
+
+@fn say(text)
+    @print text
+@end
+
+say("hey!")
