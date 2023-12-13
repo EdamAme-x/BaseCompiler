@@ -1,6 +1,6 @@
 @v list [2]
 @v index 2
-@v max 20
+@v max 100
 @fn isFunc(num)
     @for sos list
        @if num % sos === 0
