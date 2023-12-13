@@ -1,3 +1,1 @@
-# BaseCompiler
-
-[Edit in Codeflow ⚡️](https://stackblitz.com/~/github.com/EdamAme-x/BaseCompiler)
+コードをtokenize、実行するコンパイラー 技術者採用試験 教育用
