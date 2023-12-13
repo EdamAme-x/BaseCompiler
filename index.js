@@ -111,7 +111,7 @@ class BaseCompiler {
             code += `\n ${line}`;
         }
 
-        code += `\n function range(n){let r=[],e=0;for(;r.push(e),!(++e>=n););return r}`
+        code += `;\n /*BC-INJECT*/function range(n){let r=[],e=0;for(;r.push(e),!(++e>=n););return r}`
         return code;
     }
 
@@ -128,9 +128,11 @@ const c = new BaseCompiler();
 
 const { readFile } = require('node:fs');
 
+const beautify = require('beautify');
+ 
 readFile('./index.xjs', (err, data) => {
   if (err) throw err;
     const result = c.compile(data.toString())
-    console.log(result);
+    console.log(beautify(result, {format: 'js'}));
     c.execute(result)
 }); 
