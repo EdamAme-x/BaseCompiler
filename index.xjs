@@ -7,4 +7,7 @@
 @print c
 @for index range(5)
   @print index + 1
+  @if (index + 1) % 2 === 0
+    @print "odd"
+  @end
 @end

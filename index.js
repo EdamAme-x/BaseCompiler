@@ -61,6 +61,15 @@ class BaseCompiler {
 
                 code += `\n for (let ${name} of ${value}) {`;
                 continue;
+            }else if (line.startsWith("@if")) {
+                line = line.replace("@if", "");
+                line = line.split(" ");
+                line = line.reverse()
+                line.pop()
+                const which = line.reverse().join(" ");
+
+                code += `\n if (${which}) {`;
+                continue;
             }
 
             if (line.startsWith("@")) {
