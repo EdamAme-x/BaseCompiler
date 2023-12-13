@@ -1,0 +1,7 @@
+@v a "Hello"
+@v b "World"
+@v c a + b
+@print c
+# NUKE
+@v c "HEY"
+@print c
