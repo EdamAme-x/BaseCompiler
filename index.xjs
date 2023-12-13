@@ -22,7 +22,7 @@
     @elif count < 3
         @print "ok!!"
     @else
-        // Why!?
+        @print "yabai!!"
     @end
 @end
 
