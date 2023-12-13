@@ -50,6 +50,17 @@ class BaseCompiler {
                 continue;
             }else if (line.startsWith("@end")) {
                 code += `\n };`
+                continue;
+            }else if (line.startsWith("@for")) {
+                line = line.replace("@for", "");
+                line = line.split(" ");
+                const name = line[1]
+                line = line.reverse()
+                line.pop()
+                const value = line[0];
+
+                code += `\n for (let ${name} of ${value}) {`;
+                continue;
             }
 
             if (line.startsWith("@")) {
@@ -67,8 +78,9 @@ class BaseCompiler {
     execute(js) {
         return new Function(`
 // % BaseCompiler %
-${js}
+function range(n){let r=[],e=0;for(;r.push(e),!(++e>=n););return r}
 // $ BaseCompiler %
+${js}
 `)();
     }
 }
