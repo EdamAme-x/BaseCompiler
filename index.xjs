@@ -14,7 +14,7 @@
 @v hide true
 @v count 0
 @while hide
-    @print "countup!"
+    @print "countup! : " + count
     count++
     @if count > 3
         @print "limit!!"
