@@ -70,6 +70,37 @@ class BaseCompiler {
 
                 code += `\n if (${which}) {`;
                 continue;
+            }else if (line.startsWith("@fn")) {
+                line = line.replace("@fn", "");
+                line = line.split(" ");
+                line = line.reverse()
+                line.pop()
+                const func = line.reverse().join(" ");
+
+                code += `\n function ${func} {`;
+                continue;
+            }else if (line.startsWith("@while")) {
+                line = line.replace("@while", "");
+                line = line.split(" ");
+                line = line.reverse()
+                line.pop()
+                const which = line.reverse().join(" ");
+
+                code += `\n while (${which}) {`;
+                continue;
+            }else if (line.startsWith("@elif")) {
+                line = line.replace("@elif", "");
+                line = line.split(" ");
+                line = line.reverse()
+                line.pop()
+                const which = line.reverse().join(" ");
+
+                code += `\n } else if (${which}) {`;
+                continue;
+            }else if (line.startsWith("@else")) {
+                line = line.replace("@else", "");
+                code += `\n } else {`;
+                continue;
             }
 
             if (line.startsWith("@")) {
