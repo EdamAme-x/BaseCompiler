@@ -1,7 +1,23 @@
 @v list [2]
 @v index 2
+@v max 20
 @fn isFunc(num)
     @for sos list
-       @if index % sos === 0
-        @return false
+       @if num % sos === 0
+           @return false
+       @end
+    @end
+    @return true
 @end
+
+@for idx range(max)
+    @if idx <= 2
+        @continue
+    @end
+
+    @if isFunc(idx)
+        list.push(idx)
+    @end
+@end
+
+@print list
