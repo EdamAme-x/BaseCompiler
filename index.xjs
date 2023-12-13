@@ -11,3 +11,23 @@
     @print "odd"
   @end
 @end
+@v hide true
+@v count 0
+@while hide
+    @print "countup!"
+    count++
+    @if count > 3
+        @print("limit!!")
+        @v hide false
+    @elif count < 3
+        @print("ok!!")
+    @else
+        # Why!?
+    @end
+@end
+
+@fn say(text)
+    @print text
+@end
+
+say("hey!")
